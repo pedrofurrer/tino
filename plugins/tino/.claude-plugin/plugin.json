@@ -1,0 +1,22 @@
+{
+  "name": "tino",
+  "displayName": "Tino",
+  "version": "2.0.0",
+  "description": "Session continuity, lessons learned from your corrections and a critical domain wiki for AI agents. Plain Markdown in your repo; nothing is recorded without your OK.",
+  "author": {
+    "name": "Pedro Furrer Mendizabal",
+    "url": "https://github.com/pedrofurrer"
+  },
+  "homepage": "https://github.com/pedrofurrer/tino",
+  "repository": "https://github.com/pedrofurrer/tino",
+  "license": "MIT",
+  "keywords": [
+    "agent-skills",
+    "session-continuity",
+    "metacognition",
+    "lessons-learned",
+    "knowledge-base",
+    "llm-wiki",
+    "human-in-the-loop"
+  ]
+}

@@ -1,0 +1,8 @@
+id,date,speaker,venue,claim,topic,status
+C01,2026-09-10,Dana Whitfield (mayor),debate 1,"Bus ridership is up 40 percent since I took office.",transit,unchecked
+C02,2026-09-10,Marco Reyes (council member),debate 1,"Water bills have gone up 40 percent in two years.",water,unchecked
+C03,2026-09-10,Joan Okafor (independent),debate 1,"This city now spends more on outside consultants than on its parks.",budget,unchecked
+C04,2026-09-10,Dana Whitfield (mayor),debate 1,"We repaired more potholes last year than in any year on record.",streets,unchecked
+C05,2026-09-12,Marco Reyes (council member),campaign mailer,"School enrollment has fallen 15 percent.",schools,drafted
+C06,2026-09-14,anonymous account,social media post,"The mayor cut library hours in half.",libraries,unchecked
+C07,2026-09-10,Joan Okafor (independent),debate 1,"Half of the city's streetlights are still the old sodium ones.",streets,unchecked

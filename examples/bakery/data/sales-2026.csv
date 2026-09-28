@@ -1,0 +1,58 @@
+week_starting,product,units,unit_price
+2026-06-01,country loaf,245,3.50
+2026-06-01,baguette,185,2.20
+2026-06-01,croissants x6,111,4.80
+2026-06-08,country loaf,249,3.50
+2026-06-08,baguette,191,2.20
+2026-06-08,croissants x6,126,4.80
+2026-06-15,country loaf,266,3.50
+2026-06-15,baguette,183,2.20
+2026-06-15,croissants x6,119,4.80
+2026-06-22,country loaf,259,3.50
+2026-06-22,baguette,190,2.20
+2026-06-22,croissants x6,134,4.80
+2026-06-29,country loaf,257,3.50
+2026-06-29,baguette,177,2.20
+2026-06-29,croissants x6,126,4.80
+2026-07-06,country loaf,265,3.60
+2026-07-06,baguette,179,2.30
+2026-07-06,croissants x6,129,4.90
+2026-07-13,country loaf,272,3.60
+2026-07-13,baguette,188,2.30
+2026-07-13,croissants x6,148,4.90
+2026-07-20,country loaf,275,3.60
+2026-07-20,baguette,177,2.30
+2026-07-20,croissants x6,151,4.90
+2026-07-20,seed rye,45,4.20
+2026-07-27,country loaf,276,3.60
+2026-07-27,baguette,172,2.30
+2026-07-27,croissants x6,152,4.90
+2026-07-27,seed rye,49,4.20
+2026-08-03,country loaf,282,3.60
+2026-08-03,baguette,172,2.30
+2026-08-03,croissants x6,148,4.90
+2026-08-03,seed rye,46,4.20
+2026-08-10,country loaf,293,3.60
+2026-08-10,baguette,179,2.30
+2026-08-10,croissants x6,161,4.90
+2026-08-10,seed rye,54,4.20
+2026-08-17,country loaf,290,3.60
+2026-08-17,baguette,175,2.30
+2026-08-17,croissants x6,164,4.90
+2026-08-17,seed rye,62,4.20
+2026-08-24,country loaf,302,3.60
+2026-08-24,baguette,173,2.30
+2026-08-24,croissants x6,153,4.90
+2026-08-24,seed rye,70,4.20
+2026-08-31,country loaf,305,3.60
+2026-08-31,baguette,177,2.30
+2026-08-31,croissants x6,174,4.90
+2026-08-31,seed rye,65,4.20
+2026-09-07,country loaf,311,3.70
+2026-09-07,baguette,174,2.30
+2026-09-07,croissants x6,169,5.00
+2026-09-07,seed rye,64,4.20
+2026-09-14,country loaf,315,3.70
+2026-09-14,baguette,183,2.30
+2026-09-14,croissants x6,178,5.00
+2026-09-14,seed rye,72,4.20

@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use tino in your work, please cite it as below."
+type: software
+title: "tino"
+abstract: "Session continuity, lessons learned from your corrections and a critical domain wiki for AI agents, as plain Markdown in your repository."
+authors:
+  - family-names: "Furrer Mendizabal"
+    given-names: "Pedro"
+version: "2.0.0"
+date-released: "2026-09-28"
+license: MIT
+repository-code: "https://github.com/pedrofurrer/tino"
+url: "https://github.com/pedrofurrer/tino"
+keywords:
+  - agent skills
+  - session continuity
+  - metacognition
+  - lessons learned
+  - knowledge base
+  - human in the loop

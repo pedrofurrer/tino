@@ -1,0 +1,47 @@
+name: Field report
+description: How tino behaved in a real project, good or bad.
+labels: ["field report"]
+body:
+  - type: markdown
+    attributes:
+      value: "Thank you. Paste excerpts, never secrets or personal data."
+  - type: input
+    id: version
+    attributes:
+      label: tino version
+      description: "The marker in your instructions file, for example <!-- tino: continuity v2.0 -->."
+    validations:
+      required: true
+  - type: dropdown
+    id: skill
+    attributes:
+      label: Skill
+      options: [continuity, metacognition, brain, more than one]
+    validations:
+      required: true
+  - type: input
+    id: agent
+    attributes:
+      label: Agent and model
+      description: "For example: Claude Code desktop app, Opus. Or another agent that reads skills."
+  - type: dropdown
+    id: language
+    attributes:
+      label: Project language
+      options: [English, Spanish, other]
+  - type: textarea
+    id: asked
+    attributes:
+      label: What you asked
+    validations:
+      required: true
+  - type: textarea
+    id: did
+    attributes:
+      label: What the agent did
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected instead (if anything)
