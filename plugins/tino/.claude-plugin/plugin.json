@@ -10,6 +10,10 @@
   "homepage": "https://github.com/pedrofurrer/tino",
   "repository": "https://github.com/pedrofurrer/tino",
   "license": "MIT",
+  "icon": ".claude-plugin/icon.svg",
+  "documentationUrl": "https://github.com/pedrofurrer/tino/blob/main/docs/guide.md",
+  "supportUrl": "https://github.com/pedrofurrer/tino/issues",
+  "privacyPolicyUrl": "https://github.com/pedrofurrer/tino/blob/main/PRIVACY.md",
   "keywords": [
     "agent-skills",
     "session-continuity",
