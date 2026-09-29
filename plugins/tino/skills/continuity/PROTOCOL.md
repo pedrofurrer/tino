@@ -115,9 +115,11 @@ confirmation to the user in 3-5 lines.
 - **Measure before writing**: before adding text to a capped document,
   measure how much fits (the verifier `lint_continuity.py --margin` prints
   it) and size what you are about to write; if it does not fit, rotate or
-  compact FIRST, never "after this line". It comes from a real case: eight
-  "one-line" edits written without measuring left the documents in excess
-  and forced surgery under pressure, which is where things get lost.
+  compact FIRST, never "after this line". It comes from a real case: text
+  written without measuring, from whole entries down to edits of "just one
+  line", left the documents over their caps again and again, and the
+  closings went into compacting them under pressure, which is where things
+  get lost.
 - **Mechanical rotation**: the active logbook is unloaded with the rotator
   (`rotate_logbook.py`): it moves the oldest entries to the archive,
   verbatim, under a marker with the date and where their live parts went;

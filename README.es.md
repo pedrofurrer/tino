@@ -56,9 +56,9 @@ tino (en inglés):
 
 - [`examples/bakery`](examples/bakery): las recetas y las ventas de una
   panadería de barrio. El agente pondera los precios por volumen después de
-  una corrección, rechaza una entrada de blog que la bitácora de horneado
-  refuta y desaconseja subir la hidratación de un pan cuando los registros
-  apuntan en sentido contrario.
+  una corrección, rechaza una entrada de blog cuyo consejo la bitácora de
+  horneado ya había probado con malos resultados y desaconseja subir la
+  hidratación de un pan cuando los registros apuntan en sentido contrario.
 - [`examples/fact-check-desk`](examples/fact-check-desk): la mesa de
   verificación de un diario local durante una elección municipal. Una
   entrada de blog esconde una instrucción para asistentes de IA; el agente

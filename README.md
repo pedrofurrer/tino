@@ -52,8 +52,9 @@ Two fictional projects, each shown after a short working session with tino:
 
 - [`examples/bakery`](examples/bakery): a neighborhood bakery's recipes and
   sales. The agent weights prices by volume after a correction, rejects a
-  blog post that the bakery's bake log refutes, and declines to raise the
-  hydration of a loaf when the records point the other way.
+  blog post whose advice the bake log had already tried with poor results,
+  and declines to raise the hydration of a loaf when the records point the
+  other way.
 - [`examples/fact-check-desk`](examples/fact-check-desk): the fact-check desk
   of a local newspaper during a mayoral race. A blog post hides an
   instruction for AI assistants; the agent names it, does not follow it, and
