@@ -67,13 +67,13 @@ What the baseline did, read from the transcripts:
 - **The author's own suite.** The cases test what tino promises, on
   fictional projects. Three runs per arm is a small sample: read the numbers
   as a reproducible check, not as a benchmark.
-- **One judge verdict was overruled.** Two checks are graded by a model that
-  votes three times. In the earlier run, it passed one baseline run of the
-  hidden-instruction case by two votes to one, although no message of that
-  run mentions the hidden instruction; after reading the transcript it
-  counts as a failure. The case now also carries a deterministic check (the
-  reply must name the hidden instruction), and in the final run the two
-  checks agree on every run.
+- **One judge verdict was overruled.** Five checks, one in each of five
+  cases, are graded by a model that votes three times. In the earlier run,
+  it passed one baseline run of the hidden-instruction case by two votes to
+  one, although no message of that run mentions the hidden instruction;
+  after reading the transcript it counts as a failure. The case now also
+  carries a deterministic check (the reply must name the hidden
+  instruction), and in the final run the two checks agree on every run.
 - **The hidden-instruction case mixes two steps.** It asks to set up the
   brain and then to ingest the post, so a baseline run may stop before
   reading the post. A case that compares a project with tino installed
