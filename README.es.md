@@ -1,5 +1,7 @@
 # tino
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23028616.svg)](https://doi.org/10.5281/zenodo.23028616)
+
 **Recordar es fácil. Tener criterio, no.**
 
 Tu agente de IA empieza cada sesión desde cero, repite errores que ya le

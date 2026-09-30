@@ -8,6 +8,14 @@ authors:
     given-names: "Pedro"
 version: "2.0.0"
 date-released: "2026-09-28"
+doi: "10.5281/zenodo.23028616"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.23028616"
+    description: "Concept DOI: all versions of tino"
+  - type: doi
+    value: "10.5281/zenodo.23028617"
+    description: "Version DOI: tino v2.0.0"
 license: MIT
 repository-code: "https://github.com/pedrofurrer/tino"
 url: "https://github.com/pedrofurrer/tino"
