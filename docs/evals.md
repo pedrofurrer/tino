@@ -117,3 +117,10 @@ The final run of 2026-09-28 started from the working tree shortly before
 the release commit; the skills, protocols, templates and cases it loaded
 match v2.0.0. Its per-run results and transcripts are not published,
 because they contain details of the machine they ran on.
+
+A larger, three-arm evaluation (no records, flat notes and tino's records;
+five scenarios, three Claude models, 450 sessions) is reported in *Records,
+Notes or Nothing*
+([doi:10.5281/zenodo.23276754](https://doi.org/10.5281/zenodo.23276754));
+its kit, with the cases, the arms and the analysis scripts, is in the same
+record.

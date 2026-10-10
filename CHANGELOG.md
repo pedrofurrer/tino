@@ -6,6 +6,12 @@ changelog, with the upgrade steps its installer applies:
 [metacognition](plugins/tino/skills/metacognition/CHANGELOG.md) and
 [brain](plugins/tino/skills/brain/CHANGELOG.md).
 
+## Unreleased
+
+- The READMEs and `docs/evals.md` link the technical report and the
+  evaluation report on Zenodo, and the READMEs the essay that introduces
+  tino.
+
 ## 2.0.1 — 2026-10-10
 
 Documentation and wording only; no change to the files' formats or to what

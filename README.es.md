@@ -98,6 +98,13 @@ la suite del propio autor y una muestra chica, no un benchmark:
 [docs/evals.md](docs/evals.md) detalla el método, cada caso y sus salvedades,
 y [CONTRIBUTING.md](CONTRIBUTING.md) muestra cómo correrla.
 
+Una evaluación más amplia, de tres brazos, con 450 sesiones y tres modelos
+de Claude, está en [Registros, notas o
+nada](https://doi.org/10.5281/zenodo.23276754), junto con su kit; el
+[informe técnico](https://doi.org/10.5281/zenodo.23276672) describe el
+diseño, el modelo de amenazas y los límites del método. Los dos tienen
+versión en español.
+
 ## Qué cuesta y qué toca
 
 - **Tokens por sesión**, medidos en los ejemplos: unos 1.750 por los
@@ -132,6 +139,9 @@ que leen skills pueden usarlas; consulta su documentación.
 
 [Guía](docs/es/guide.md) · [Formatos de archivo](docs/format.md) ·
 [Controles opcionales](docs/guardrails.md) · [Evaluaciones](docs/evals.md) ·
+[Informe técnico](https://doi.org/10.5281/zenodo.23276672) ·
+[Informe de evaluación](https://doi.org/10.5281/zenodo.23276754) ·
+[Ensayo](https://pedrofurrer.github.io/es/recordar-no-es-tener-criterio/) ·
 [Un ejemplo de reglas graduadas](docs/es/principles-example.md) ·
 [Cambios](CHANGELOG.md) · [Cómo contribuir](CONTRIBUTING.md) ·
 [Seguridad](SECURITY.md) · [Privacidad](PRIVACY.md) · [Cita](CITATION.cff)

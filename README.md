@@ -89,6 +89,12 @@ sample, not a benchmark: [docs/evals.md](docs/evals.md) has the method, every
 case and its caveats, and [CONTRIBUTING.md](CONTRIBUTING.md) shows how to run
 it yourself.
 
+A larger three-arm evaluation, with 450 sessions over three Claude models,
+is reported in [Records, Notes or
+Nothing](https://doi.org/10.5281/zenodo.23276754), together with its kit;
+the [technical report](https://doi.org/10.5281/zenodo.23276672) describes
+the design, the threat model and the method's limits.
+
 ## What it costs and what it touches
 
 - **Tokens per session**, measured on the examples: about 1,750 for the
@@ -122,6 +128,9 @@ skills can use them; check their documentation.
 
 [Guide](docs/guide.md) · [File formats](docs/format.md) ·
 [Optional guardrails](docs/guardrails.md) · [Evals](docs/evals.md) ·
+[Technical report](https://doi.org/10.5281/zenodo.23276672) ·
+[Evaluation report](https://doi.org/10.5281/zenodo.23276754) ·
+[Essay](https://pedrofurrer.github.io/memory-is-not-judgment/) ·
 [An example of graduated rules](docs/principles-example.md) ·
 [Changelog](CHANGELOG.md) · [Contributing](CONTRIBUTING.md) ·
 [Security](SECURITY.md) · [Privacy](PRIVACY.md) · [Citation](CITATION.cff)
