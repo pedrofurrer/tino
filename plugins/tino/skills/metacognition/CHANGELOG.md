@@ -7,6 +7,15 @@ project from an earlier version (step 0). The block text and the
 introspection ritual are replaced once, by the current version's. The
 project's lessons are NEVER rewritten.
 
+## Plugin 2.0.1 — 2026-10-10 (wording only; the system stays at v2.0)
+- Wording: a lesson is called a lesson, not a card, in the protocol, the
+  introspection ritual, the lesson template and the block's capture line
+  ("With OK: its file and its bullet in the index"); "card" stays for the
+  brain's cards. The skill describes `.claude/` as a protected path whose
+  write behavior depends on the permission mode.
+- **Upgrade:** nothing to apply. A project picks up the new wording the
+  next time the installer replaces the block or the ritual.
+
 ## v2.0 — 2026-09-28
 - Published in English as part of the tino plugin (Claude Code and Cowork)
   and as a standalone Agent Skill. English is now the source language; the
@@ -35,7 +44,7 @@ project's lessons are NEVER rewritten.
   `--bytes-max`) are explicit options, each one applied on its own; there
   are no longer automatic limits for a file named `MEMORY.md`.
 - Ritual fallback: where the environment has no skills or the write into
-  `.claude/` is denied (Claude Code asks before writing there), the
+  `.claude/` is denied (a protected path in Claude Code), the
   introspection goes to `rituals/introspect.md` (Spanish set: `rituales/`),
   read on demand and pointed to by the block, instead of a section of the
   instructions, which is paid in every session.

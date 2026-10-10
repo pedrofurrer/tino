@@ -1,8 +1,8 @@
 {
   "name": "tino",
   "displayName": "Tino",
-  "version": "2.0.0",
-  "description": "Session continuity, lessons learned from your corrections and a critical domain wiki for AI agents. Plain Markdown in your repo; nothing is recorded without your OK.",
+  "version": "2.0.1",
+  "description": "Session continuity, lessons learned from your corrections and a critical domain wiki for AI agents. Plain Markdown in your repo; lessons and wiki pages enter only with your OK.",
   "author": {
     "name": "Pedro Furrer Mendizabal",
     "url": "https://github.com/pedrofurrer"

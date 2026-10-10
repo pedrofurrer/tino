@@ -115,8 +115,10 @@ other language → the English set)? Summarize it to the user in 3 lines.
   (`introspeccion` in the Spanish set) and equals the frontmatter `name`
   (other agents with skills read `.claude/skills/` or `.agents/skills/`),
   with `<LINT_LESSONS>` resolved to the verifier's command and without the
-  header comment. Claude Code asks the user before writing inside
-  `.claude/`: say so just before. If the environment has no skills or that
+  header comment. In Claude Code, `.claude/` is a protected path: depending
+  on the permission mode, a write there asks the user, goes to auto mode's
+  classifier or is refused; say so just before. If the environment has no
+  skills or that
   write is denied, write the same file as `rituals/<name>.md` (Spanish set:
   `rituales/`), read on demand, and make `<RITUAL>` point to it; never paste
   the procedure into the instructions, which are paid in every session. Say

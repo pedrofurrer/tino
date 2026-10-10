@@ -119,8 +119,10 @@ structure guide; in data, data dictionary and assumptions).
   (`guardar-avance` in the Spanish set) and equals the frontmatter `name`;
   other agents with skills read `.claude/skills/` or `.agents/skills/`
   (check their documentation). Commands resolved, header comment removed.
-  Claude Code asks the user before writing inside `.claude/`: say so just
-  before. If the environment has no skills or that write is denied, write
+  In Claude Code, `.claude/` is a protected path: depending on the
+  permission mode, a write there asks the user, goes to auto mode's
+  classifier or is refused; say so just before. If the environment has no
+  skills or that write is denied, write
   the same file as `rituals/<name>.md` (Spanish set: `rituales/`), read on
   demand, and make `<RITUAL>` point to it; never paste the procedure into
   the instructions, which are paid in every session. Say so in the report:

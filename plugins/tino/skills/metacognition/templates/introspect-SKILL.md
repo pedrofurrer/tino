@@ -48,7 +48,7 @@ add the form to the list.
    with validation, scope, evidence, cases, applied cases, recurrence rate
    and last change; open in full only those that changed since the previous
    run or those a recurrence points to (reading them all does not scale: in
-   the reference deployment there were 65 cards and ~340 KB). Add the
+   the reference deployment there were 65 lessons and ~340 KB). Add the
    project's recent record (logbook, changelog or equivalent). The
    introspection does not read past conversations or the agent's own memory.
 2. **Recurrence** (the most valuable signal): did an error already filed
@@ -57,10 +57,10 @@ add the form to the list.
    "what MOMENT do the recurrences share?": if they share the act, the input
    and the point of the work, the remedy is an instrument (verifier, hook,
    required field, ritual step with the command written out), recorded as
-   `carried_to` in the card — not another line of text.
+   `carried_to` in the lesson — not another line of text.
 3. **Drafts**: lessons in `validation: proposed` (captured in autonomous
    work) are presented to the user for OK, correction or discarding. With
-   OK, the card becomes `hypothesis` and ENTERS the index: its bullet
+   OK, the lesson becomes `hypothesis` and ENTERS the index: its bullet
    (`- lesson-<slug> — <trigger → principle>`) and the END count.
 4. **Cross-cutting patterns**: do several lessons point to a deeper bias? →
    propose consolidating them into a parent lesson (the children are
@@ -72,14 +72,14 @@ add the form to the list.
    until data, a primary source or an observed outcome corroborates it. No
    recurrence or use in ~30 days → archive. Confirmed lessons with a
    frequent trigger → propose to the user their graduation to a permanent
-   rule (`graduated`), with a DESTINATION that follows the card's `scope`:
+   rule (`graduated`), with a DESTINATION that follows the lesson's `scope`:
    `<project>` → the project's instructions, guides or invariants (if there
    is a brain, lessons about reading sources or validating claims go to its
    SCHEMA); `cross-project` → the user's GLOBAL instructions, if their
    environment has them — rewritten without references to the project
    (neither its domain nor its tools), because those instructions load in
-   every session of every project and only take generic rules; the card
-   keeps the history. It is `cross-project` only if trigger and principle
+   every session of every project and only take generic rules; the lesson
+   file keeps the history. It is `cross-project` only if trigger and principle
    speak about the METHOD and would apply unchanged in another project.
    Never write into the global instructions outside this step or without
    OK.
@@ -101,7 +101,7 @@ add the form to the list.
 
 - Every new lesson or substantial reformulation is PROPOSED to the user
   before filing (trigger + principle + what it rests on, 2-3 lines); without
-  their OK it stays `proposed`. Adding a dated case to a card is a record,
+  their OK it stays `proposed`. Adding a dated case to a lesson is a record,
   not a reformulation.
 - Graduations to shared documents ALWAYS require their OK.
 - Lessons never veto the user's decisions: they describe the agent's

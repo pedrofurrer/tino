@@ -7,6 +7,18 @@ project from an earlier version (step 0). The block and the rituals are
 replaced once, by the current version's. The project's cards, concepts and
 syntheses are NEVER touched; the SCHEMA is only touched by showing the diff.
 
+## Plugin 2.0.1 — 2026-10-10 (wording only; the system stays at v2.0)
+- Wording: the protocol (rule 10) and the ingest ritual agree that a single
+  piece of unknown origin is read first in a subagent with no write or
+  network permissions. Rule 9 says why the quality filter sits at the door:
+  what enters is later read as trusted context, and the content lint is
+  periodic and partial. The skill describes `.claude/` as a protected path
+  whose write behavior depends on the permission mode. The v2.0 entry below
+  says that the rituals instruct the agent to check what it writes, instead
+  of saying that they check it.
+- **Upgrade:** nothing to apply. A project picks up the new wording the
+  next time the installer replaces the rituals.
+
 ## v2.0 — 2026-09-28
 - Published in English as part of the tino plugin (Claude Code and Cowork)
   and as a standalone Agent Skill. English is now the source language; the
@@ -29,16 +41,16 @@ syntheses are NEVER touched; the SCHEMA is only touched by showing the diff.
   optional guard for Claude Code is documented separately.
 - Still open: a naming convention for second-level splits of a subdomain
   (the verifier already supports flat sibling sub-indexes).
-- The ingest, harvest and lint rituals check what they write, piece by
-  piece: figures recomputed from their source, quotations verbatim, each
-  claim no more certain than its evidence (a match is not an origin), and
-  statements the operation makes stale updated at once. A card records the
-  reading of its source, never the wiki's queue.
+- The ingest, harvest and lint rituals instruct the agent to check what it
+  writes, piece by piece: figures recomputed from their source, quotations
+  verbatim, each claim no more certain than its evidence (a match is not an
+  origin), and statements the operation makes stale updated at once. A card
+  records the reading of its source, never the wiki's queue.
 - Ingest: a source that lives outside the inbox is COPIED into `sources/`,
   never moved; only the inbox empties (a closed test moved a user's
   `reading/` folder away).
 - Ritual fallback: where the environment has no skills or the write into
-  `.claude/` is denied (Claude Code asks before writing there), the three
+  `.claude/` is denied (a protected path in Claude Code), the three
   rituals go to `rituals/<name>.md` (Spanish set: `rituales/`), read on demand
   and pointed to by the block, instead of a section of the instructions, which
   is paid in every session.

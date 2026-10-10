@@ -7,6 +7,15 @@ project from an earlier version (step 0). The block text and the ritual are
 replaced once, by the current version's. The project's documents are never
 overwritten.
 
+## Plugin 2.0.1 — 2026-10-10 (wording only; the system stays at v2.0)
+- Wording: the protocol and the docstring of `rotate_logbook.py` say that
+  the entries that stay are left byte for byte and that the only other
+  change to the logbook is the rotation index line in its header. The skill
+  describes `.claude/` as a protected path whose write behavior depends on
+  the permission mode. The script's behavior is unchanged.
+- **Upgrade:** nothing to apply; the next script replacement brings the new
+  docstring.
+
 ## v2.0 — 2026-09-28
 - Published in English as part of the tino plugin (Claude Code and Cowork)
   and as a standalone Agent Skill. English is now the source language; the
@@ -36,7 +45,7 @@ overwritten.
 - The closing ritual no longer updates the agent's own memory: what matters
   goes to the project's documents.
 - Ritual fallback: where the environment has no skills or the write into
-  `.claude/` is denied (Claude Code asks before writing there), the ritual
+  `.claude/` is denied (a protected path in Claude Code), the ritual
   goes to `rituals/save-progress.md` (Spanish set: `rituales/`), read on
   demand and pointed to by the block, instead of a section of the
   instructions, which is paid in every session.

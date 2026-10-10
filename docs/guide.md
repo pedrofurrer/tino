@@ -21,12 +21,17 @@ what goes in.
 ## The idea
 
 - **Everything that matters lives in files you can read.** No database, no
-  service, no hidden memory: a plan, a logbook, lesson cards, wiki pages.
-  They travel with the project and its version control.
-- **The agent maintains them; you decide what enters.** Lessons and wiki
-  pages are proposed first and written only with your OK.
+  service, no hidden memory: a plan, a logbook, lessons, wiki pages. They
+  travel with the project and its version control. The one exception is
+  graduation: with your OK, a confirmed cross-project lesson becomes a rule
+  in your global instructions, outside the project; the lesson and its
+  history stay in the project.
+- **The agent maintains them; lessons and wiki pages go in only with your
+  OK.** They are proposed first and filed only with your OK; a lesson
+  drafted while you are away waits on disk as `proposed`, outside the index.
 - **Instructions are paid in every session.** The rules the agent must see
-  every time are kept to short blocks (at most 20, 15 and 15 lines), and
+  every time are kept to short blocks (20, 15 and 15 lines by default; the
+  checker warns when one grows past its cap), and
   everything else is read on demand. Four small scripts measure sizes and
   check indexes, so the files do not grow without anyone noticing.
 - **Outside material is data, never an instruction.** A web page, an email
@@ -48,16 +53,19 @@ are clear.
 
 Each installer:
 
-1. reads the project and explains in a few lines what it would create;
-2. asks the questions it needs, each with a default;
-3. waits for your OK, then writes the files, filled with the project's real
-   state instead of empty templates;
+1. explains in a few lines what it would create and waits for your OK;
+2. reads the project and settles its questions with you, proposing defaults
+   or drafts;
+3. writes the files, filled with the project's real state instead of empty
+   templates;
 4. runs its checker, and closes with a short report: what was created, what
    was adapted and why, and the two or three gestures you will use.
 
-In Claude Code, writing the rituals into `.claude/skills/` asks for your
-permission. If you decline, they go to `rituals/` and the rules block points
-to them there; you can move them later.
+In Claude Code, `.claude/` is a protected path: depending on the permission
+mode, writing the rituals into `.claude/skills/` asks for your permission,
+goes to auto mode's classifier or is refused. If the write does not happen,
+they go to `rituals/` and the rules block points to them there; you can move
+them later.
 
 Removing the plugin does not remove anything from your projects: the files
 are yours and keep working as plain documents.
@@ -73,8 +81,9 @@ when closing.
 It has four layers:
 
 1. **Living documents** at the project root.
-   - `PLAN.md`: the roadmap, with a "where we left off" section at the top
-     and task states (✅ done, 🔄 in progress, ⏳ pending, 💡 idea).
+   - `PLAN.md`: the roadmap, with task states (✅ done, 🔄 in progress,
+     ⏳ pending, 💡 approved idea); every task in progress carries its "where
+     we left off" and a next step.
    - `LOGBOOK.md`: dated entries with decisions and their reasons. It is
      append-only: a reversal is a new entry, never an edit.
    - `ARCHITECTURE.md`: a map of the project and its numbered
@@ -83,16 +92,19 @@ It has four layers:
    `AGENTS.md` or equivalent), at most 20 lines, that tells the agent to
    read those documents before changing anything and to stop and alert you
    if a change contradicts an invariant or a recorded decision.
-3. **Version control**, if the project has it. The installer offers to start
-   it, and checks what must not be committed.
+3. **Version control.** If the project has none, the installer proposes
+   starting one (without it, dated copies); exclusions are checked before
+   the first commit, and no remote is added unless you ask.
 4. **A closing ritual**, invoked with "save progress" or run after a
    milestone: it updates the three documents within their budgets, runs the
    checker and commits.
 
 **Budgets.** Each document has a cap in lines and in kilobytes, with an alarm
 at 80 %: PLAN 150 lines and 18 KB, ARCHITECTURE 200 and 30 KB, LOGBOOK 200
-and 25 KB, the whole instructions file 300 lines and 20 KB. They live in one
-line at the top of `PLAN.md`, so you can recalibrate them. The checker
+and 25 KB. The whole instructions file gets a warning from 200 lines or
+12 KB and again at 300 lines or 20 KB, never a failure. The caps live in a
+machine-readable line in `PLAN.md` (an HTML comment the checker finds
+anywhere in the file), so you can recalibrate them. The checker
 (`scripts/lint_continuity.py`) reports every document and block against its
 cap; with `--margin` it says how much still fits before writing.
 
@@ -106,9 +118,9 @@ control and a short rule. The installer proposes the scale and records why.
 
 ## Metacognition
 
-An agent does not learn between sessions. Automatic memory helps it remember
-facts; metacognition makes it change how it thinks. The unit is a
-**judgment lesson**: a card in `lessons/` with
+An agent does not learn between sessions. Automatic memory can help it
+recall facts and even your corrections; metacognition makes it change how it
+thinks. The unit is a **judgment lesson**: a file in `lessons/` with
 
 - a **Trigger**: a situation recognizable before acting ("I am about to
   compare periods of a series…");
@@ -118,7 +130,7 @@ facts; metacognition makes it change how it thinks. The unit is a
 - the **Cases**: dated lines of origin, successful application and
   recurrence.
 
-Each card declares its **validation** (`proposed` without your OK,
+Each lesson declares its **validation** (`proposed` without your OK,
 `hypothesis` with one case, `recurring`, `confirmed` once it has been applied
 successfully, `graduated`, `archived`), its **evidence** (`data`, `source`,
 `reality` or only the `user`'s word; a lesson resting only on your word does
@@ -128,9 +140,10 @@ would apply unchanged elsewhere.
 
 **Capture.** When you correct the agent and the correction shows a pattern,
 or the data refute one of its predictions, it proposes a lesson in two or
-three lines: trigger, principle and what it rests on. It writes the card only
-with your OK. The closing ritual adds a retro step: lessons to propose, or an
-explicit "no lessons".
+three lines: trigger, principle and what it rests on. It files the lesson
+only with your OK; a lesson drafted while you are away waits on disk as
+`proposed`, outside the index. The closing ritual adds a retro step: lessons
+to propose, or an explicit "no lessons".
 
 **Application.** Proposing lessons is easy; applying them is where it is won
 or lost, through four channels:
@@ -147,7 +160,7 @@ or lost, through four channels:
    work, the fix is a check that fires at that moment (a script, a required
    field, a ritual step), not more text.
 
-For an example of where graduated lessons can end up, see one user's
+For an example of where graduated lessons can end up, see the author's own
 [hard rules](principles-example.md).
 
 **Introspection** consolidates the lessons: weekly or with the project's
@@ -165,15 +178,15 @@ decisions or take away the ones that are yours.
 
 Sources pile up: articles, reports, notes, datasheets. The brain is a wiki of
 your domain that the agent writes and keeps, in `knowledge/`, where every
-claim carries a confidence level:
+important claim carries a confidence level:
 
 - 🔸 **dixit**: someone says so; no verifiable evidence;
 - 🔹 **consensus**: several independent sources agree, or it is officially
-  documented;
+  documented mechanics (how a system works);
 - ✅ **validated**: checked against your own data, the only level that
   supports a strong recommendation.
 
-Pages also carry a **validity** (current, doubtful, obsolete), with the
+Cards also carry a **validity** (current, doubtful, obsolete), with the
 source's date. Official or interested sources are trusted on how things work,
 not on what suits you.
 
@@ -240,7 +253,10 @@ A few habits make it work better:
   locked logbook archive, "where we left off" shown again on resume, and a
   guard on the wiki's raw sources.
 - **It costs tokens.** In the examples, about 1,750 tokens per session for
-  the installed files and about 230 for the plugin (measured on 2026-09-28).
+  the installed files and about 230 for the plugin, in six of eight readings
+  (about 1,115 in the other two, cause not found), measured on 2026-09-28.
+  Reading the plan and the architecture document before a change adds an
+  estimated 2,200 to 2,500 in the examples.
 - **The evidence is still thin.** The eval runs are encouraging
   and small: see [evals.md](evals.md).
 - **The scripts need Python 3.8 or later.** Without Python the budgets are
@@ -257,9 +273,11 @@ steps.
 
 ## Questions
 
-**Does it replace my agent's memory?** No. Automatic memory remembers facts
-about you; tino keeps the project's record, the lessons you approved and a critical wiki,
-in files the project owns, and it does not read that memory.
+**Does it replace my agent's memory?** No. Automatic memory saves notes
+that Claude writes itself from your preferences, your corrections and the
+project's context, outside the project; tino keeps the project's record,
+the lessons you approved and a critical wiki, in files the project owns,
+and it does not read that memory.
 
 **Does it work without Claude Code?** The skills follow the Agent Skills
 format, and the files are plain Markdown, so agents that read skills or a

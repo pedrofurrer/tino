@@ -120,8 +120,10 @@ English set)? Summarize it in 3 lines.
   frontmatter `name` (`ingest-source`, `harvest`, `lint-brain`; Spanish set:
   `ingerir-fuente`, `cosechar`, `lint-cerebro` — change `name` and folder
   together; other agents with skills read `.claude/skills/` or
-  `.agents/skills/`), without the header comment. Claude Code asks the user
-  before writing inside `.claude/`: say so just before. If the environment
+  `.agents/skills/`), without the header comment. In Claude Code, `.claude/`
+  is a protected path: depending on the permission mode, a write there asks
+  the user, goes to auto mode's classifier or is refused; say so just
+  before. If the environment
   has no skills or that write is denied, write the same files as
   `rituals/<name>.md` (Spanish set: `rituales/`), read on demand, and make
   `<RITUALS>` point to them; never paste the procedures into the

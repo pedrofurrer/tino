@@ -9,7 +9,7 @@
     {
       "name": "tino",
       "source": "./plugins/tino",
-      "description": "Session continuity, lessons learned from your corrections and a critical domain wiki for AI agents. Plain Markdown in your repo; nothing is recorded without your OK."
+      "description": "Session continuity, lessons learned from your corrections and a critical domain wiki for AI agents. Plain Markdown in your repo; lessons and wiki pages enter only with your OK."
     }
   ]
 }

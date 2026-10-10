@@ -1,4 +1,4 @@
-# Ejemplo: las reglas duras de un usuario
+# Ejemplo: las reglas duras del propio autor
 
 *Read in English: [../principles-example.md](../principles-example.md).*
 

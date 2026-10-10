@@ -3,7 +3,7 @@ name: lesson-<short-slug-in-kebab-case>
 description: "<trigger → principle compressed into one line — this goes to the index>"
 metadata:
   type: lesson
-  validation: proposed   # proposed (no OK) | hypothesis (1 case) | recurring (2+) | confirmed (applied successfully) | graduated (already a hard rule) | archived | example (only the example card)
+  validation: proposed   # proposed (no OK) | hypothesis (1 case) | recurring (2+) | confirmed (applied successfully) | graduated (already a hard rule) | archived | example (only the example lesson)
   scope: <project>       # the project's name | cross-project (applies to any project)
   evidence: user         # what the correction rests on: data | source (primary, opened) | reality (observed outcome) | user (only their word)
   carried_to: ~          # optional: the mechanical instrument that enforces it (script, hook, ritual step); filled when it graduates to channel 4
@@ -17,7 +17,7 @@ and leave the concrete forms as examples ("they illustrate, they do not
 limit"): a trigger that lists the surface where the error was born does not
 fire when the same error arrives through another surface. If it recurs
 through a form that was not listed, REFORMULATE it by mechanism (keeping the
-history of formulations in the card); do not add the form to the list.
+history of formulations in the lesson); do not add the form to the list.
 
 **Original error**: what was done or proposed, why it was wrong, and how it
 was found out (user correction / data / reality). With the date and the

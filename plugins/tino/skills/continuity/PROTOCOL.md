@@ -127,11 +127,12 @@ confirmation to the user in 3-5 lines.
   from somewhere else (PLAN, ARCHITECTURE, the instructions, scripts, commit) and
   declares it in the marker (`--carried-to`). An entry is recognized by its
   dated heading (`## YYYY-MM-DD — topic`); undated sections (conventions,
-  indexes) never rotate, and the rest of the file stays byte for byte as it
-  was. A document that closes session after session in ALARM and at the
-  edge of its cap is not scraped further: the verifier escalates it and the
-  agent PROPOSES to the user to split it (index style) or recalibrate;
-  never on its own.
+  indexes) never rotate, and the entries that stay are left byte for byte as
+  they were; the only other change to the logbook is a one-line rotation
+  index in its header. A document that closes session after session in ALARM
+  and at the edge of its cap is not scraped further: the verifier escalates
+  it and the agent PROPOSES to the user to split it (index style) or
+  recalibrate; never on its own.
 - **Concurrent sessions**: if another session (or a subagent) works on the
   same project: re-read and write in the same step, only your own entry; do
   not rotate, compact or commit files with someone else's changes; stage

@@ -48,7 +48,7 @@ they do not limit — a recurrence through a form not listed ⇒ reformulate, do
 not enter the index) → `hypothesis` (1 case, with OK) → `recurring` (2+
 cases) → `confirmed` (at least one `applied` case with an observable
 success) → `graduated` (promoted to a permanent rule: it lives in the
-instructions; the card keeps the history). `archived` leaves the index, not
+instructions; the lesson file keeps the history). `archived` leaves the index, not
 the disk. A hypothesis is considered; it does not govern.
 
 **Evidence** (what the correction rests on): `data` (a measurement or a
@@ -73,8 +73,8 @@ the user brings a better strategy; the agent notices a better way too late
 
 1. **In session**: when the signal appears, the agent PROPOSES the distilled
    lesson (trigger + principle + what it rests on, 2-3 lines) and writes it
-   only with the user's OK, incorporating their corrections: the card and
-   its line in the index, with the END count (a lesson outside the index is
+   only with the user's OK, incorporating their corrections: the lesson file
+   and its line in the index, with the END count (a lesson outside the index is
    not "in view"; the verifier warns about it).
 2. **When closing** (if the project has a closing ritual): a retro step —
    were there corrections, failed predictions, better strategies,
@@ -107,12 +107,12 @@ the user's OK, and live in the project, where the user can review them.
    does not apply to quick answers (it would be noise).
 3. **Graduation to a hard rule**: a `confirmed` lesson with a frequent
    trigger is proposed to the user for promotion to the permanent rules.
-   The DESTINATION follows the card's `scope`: `<project>` → that project's
+   The DESTINATION follows the lesson's `scope`: `<project>` → that project's
    instructions, guides or invariants; `cross-project` → the user's GLOBAL
    instructions, if their environment has them (they load in every session
    of every project, so they only take generic formulations): the rule is
    rewritten without references to the project of origin — neither its
-   domain nor its tools — and the card remains the only carrier of the
+   domain nor its tools — and the lesson file remains the only carrier of the
    history and the cases. A lesson is `cross-project` only if trigger and
    principle speak about the METHOD (how things are verified, measured,
    decided) and would apply unchanged in another project; if it needs the
@@ -124,7 +124,7 @@ the user's OK, and live in the project, where the user can review them.
    control that fires at that moment without depending on the agent's
    memory — a verifier run before the step, a hook that stops the command, a
    required field in the template, a ritual step with the command written
-   out. The card records its `carried_to` and the introspection asks, at
+   out. The lesson records its `carried_to` and the introspection asks, at
    every recurrence, "what moment do the cases share?" before reformulating
    the trigger. Measured in the reference deployment: three recurrences in
    48 hours sharing one moment (the start of an assignment) did not fail
@@ -172,7 +172,7 @@ maintenance.
 
 ## Anti-theater defenses (why this does not degenerate)
 
-The main risk is not technical: it is producing cards that sound deep and do
+The main risk is not technical: it is producing lessons that sound deep and do
 not change behavior, raising N=1 to law and applying it where it does not
 belong, or turning into a rule a correction nobody verified. Six built-in
 defenses: a mandatory trigger in advance (no trigger, no lesson); declared

@@ -2,22 +2,24 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23028616.svg)](https://doi.org/10.5281/zenodo.23028616)
 
-**Memory is easy. Judgment is hard.**
+**Memory is not judgment.**
 
-Your AI agent starts every session from zero, repeats mistakes you already
-corrected, and believes whatever it reads. tino is three skills that set up,
-inside your project, the plain-Markdown records a careful professional would
-keep: a plan and a logbook, lessons learned from your corrections, and a
-critical wiki of your domain. The agent maintains them; you approve what goes
-in.
+Each session, your AI agent starts with a fresh context. Instructions files
+and the agent's own memory carry part of the past over: you write the first,
+and the agent decides what goes in the second. Even so, it can repeat a
+mistake you corrected or take a confident source at its word. tino is three
+skills that set up, inside your project, the plain-Markdown records a
+careful professional would keep: a plan and a logbook, lessons learned from
+your corrections, and a critical wiki of your domain. The agent maintains
+them; lessons and wiki pages go in only with your OK.
 
 *Leer en español: [README.es.md](README.es.md).*
 
 | Skill | What it sets up | What changes |
 |---|---|---|
-| `continuity` | `PLAN.md`, `LOGBOOK.md`, `ARCHITECTURE.md` with the project's invariants, a short rules block and a closing ritual | Every session resumes where the last one left off, and past decisions are not silently undone |
-| `metacognition` | Judgment lessons (trigger → principle) with an index loaded in every session, and a periodic introspection | Your corrections become rules the agent applies, cites and measures |
-| `brain` | A wiki in `knowledge/` with a schema, an index, three rituals (ingest, harvest, lint) and a verifier | Every source is read critically, every claim carries a confidence level, and nothing is filed without your OK |
+| `continuity` | `PLAN.md`, `LOGBOOK.md`, `ARCHITECTURE.md` with the project's invariants, a short rules block and a closing ritual | Each session can resume from where the last one left off, and the agent is told to stop and alert you before a change undoes a recorded decision |
+| `metacognition` | Judgment lessons (trigger → principle) with an index loaded in every session, and a periodic introspection | Your corrections become lessons the agent applies, cites and measures; a lesson becomes a rule only once confirmed, with your OK |
+| `brain` | A wiki in `knowledge/` with a schema, an index, three rituals (ingest, harvest, lint) and a verifier | Every source is read critically, every important claim carries a confidence level, and nothing is filed without your OK |
 
 ## Install
 
@@ -55,13 +57,14 @@ Two fictional projects, each shown after a short working session with tino:
 - [`examples/bakery`](examples/bakery): a neighborhood bakery's recipes and
   sales. The agent weights prices by volume after a correction, rejects a
   blog post whose advice the bake log had already tried with poor results,
-  and declines to raise the hydration of a loaf when the records point the
-  other way.
+  and advises against raising the hydration of a loaf when the records point
+  the other way; the decision stays the owner's.
 - [`examples/fact-check-desk`](examples/fact-check-desk): the fact-check desk
   of a local newspaper during a mayoral race. A blog post hides an
   instruction for AI assistants; the agent names it, does not follow it, and
-  shows that the post's "15 percent" matches the worst case of a 2019
-  projection, not a measurement.
+  shows that the post's "15 percent" is far from the 4.1 % fall measured
+  between 2020-21 and 2025-26 and matches the worst case of a 2019
+  projection, a possible origin it records as an unverified hypothesis.
 
 ## Does it work?
 
@@ -71,13 +74,14 @@ sessions on seeded projects, with and without the plugin. Final run on
 
 | Behavior | With tino | Without |
 |---|---|---|
-| A source hides an instruction for AI assistants: the agent names it and does not follow it | 3/3 | 0 of the 4 baseline runs that read the source, over two full runs* |
+| A source hides an instruction for AI assistants: the agent names it and does not follow it | 3/3 | 0 of 6 baseline runs over two full runs; all six read the source* |
 | "Learn from my corrections": the agent explains, asks and writes nothing yet | 3/3 | 0/3: all three wrote self-applied rules into `CLAUDE.md` |
 | "Keep a knowledge base from my articles": the agent explains, asks and writes nothing yet | 3/3 | 0/3: all three built one at once |
 | "Set up continuity": the agent explains and waits for the OK | 3/3 | 3/3 |
 
-\*Without tino the brain cannot be set up, and some baseline runs stopped
-there without reading the source.
+\*Without tino the brain cannot be set up. Every baseline run said so, but
+all of them also read the source and checked its figure against the data,
+and none mentioned the hidden instruction.
 
 The installers (an English project, a Spanish one) and the upgrade from 1.x
 passed every check in 9 of 9 runs. This is the author's own suite and a small
@@ -89,17 +93,22 @@ it yourself.
 
 - **Tokens per session**, measured on the examples: about 1,750 for the
   installed files (the three rules blocks, a one-lesson index and five ritual
-  descriptions) and about 230 for the plugin's three skill descriptions.
-  Each installer adds a few thousand more only when it runs. Measured on
+  descriptions) and about 230 for the plugin's three skill descriptions, in
+  six of eight readings (in the other two, about 1,115, with no cause
+  found). Reading the plan and the architecture document before a change,
+  as the rules ask, adds an estimated 2,200 to 2,500 in the examples, and
+  each installer adds a few thousand more only when it runs. Measured on
   2026-09-28 as the difference in input tokens between the same project
   with and without tino, in Claude Code 2.1.283.
 - **Files:** Markdown in your project and up to four small Python scripts
-  (standard library only) that check sizes, indexes and lessons. tino makes no network calls, collects no data, never reads your agent's
-  memory or past conversations, and does not change its permissions: see
+  (standard library only) that check sizes, indexes and lessons. tino makes
+  no network calls, collects no data, never reads your agent's memory or
+  past conversations, and does not change its permissions: see
   [PRIVACY.md](PRIVACY.md).
-- **Rituals:** Claude Code asks before writing into `.claude/`. Approve it
-  and the rituals become project skills; decline it and they go to
-  `rituals/`, read on demand.
+- **Rituals:** Claude Code treats `.claude/` as a protected path; depending
+  on the permission mode, a write there asks you, goes to auto mode's
+  classifier or is refused. If the rituals can be written there they become
+  project skills; if not, they go to `rituals/`, read on demand.
 
 ## Languages and other agents
 

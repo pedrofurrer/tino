@@ -23,7 +23,7 @@ session. In the index, one bullet per active lesson: `- lesson-<slug> —
 2. **Pre-delivery** (report, plan, text for third parties): if a lesson's
    trigger matches, apply it and cite it at the end ("Judgment applied: <lesson>").
 3. **Capture**: a correction with a PATTERN or a refuted prediction → PROPOSE
-   the lesson (trigger + principle + what it rests on). With OK: its card and
+   the lesson (trigger + principle + what it rests on). With OK: its file and
    its bullet in the index (and the END count); without OK it stays `proposed`.
 4. **Introspection** (<CADENCE>; <RITUAL>): measures recurrence and prunes;
    propose it right away at a rethink milestone (refuted premise, recurrence).

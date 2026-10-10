@@ -6,8 +6,9 @@ everything the installers and rituals wrote. Everything in them is
 invented, including the people, the newspaper and the city.
 
 Each session was a sequence of plain requests from the project's owner,
-listed below in order. The agent's replies are not included; the files show the state after that
-session, reviewed before publication.
+listed below in order. The agent's replies are not included; the files show
+the state after that session, reviewed and edited by hand before
+publication.
 
 ## [Los Robles Bakery](bakery/)
 

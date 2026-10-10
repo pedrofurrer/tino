@@ -23,8 +23,8 @@ An entry is everything from a `## YYYY-MM-DD …` heading (also
 `## [YYYY-MM-DD] …`) to the next `## ` outside a code block. Age comes from
 the heading's date; on equal dates, the one higher up. The header (before the
 first `## `) and every `## ` section WITHOUT a date (conventions, indexes)
-never rotate. The rest of the file stays byte for byte as it was: entries
-that stay are not edited. Bytes are measured in UTF-8. Standard library only.
+never rotate. The entries that stay are left byte for byte as they were; the
+only other change to the logbook is the rotation index line of point (3). Bytes are measured in UTF-8. Standard library only.
 
 Language: the texts this script writes into the logbook and the archive exist
 in English and in Spanish. It writes Spanish for a Spanish logbook

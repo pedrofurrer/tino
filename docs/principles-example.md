@@ -1,4 +1,4 @@
-# Example: one user's hard rules
+# Example: the author's own hard rules
 
 *Leer en español: [es/principles-example.md](es/principles-example.md).*
 

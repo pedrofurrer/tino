@@ -24,13 +24,18 @@ los nombra así, con el nombre inglés entre paréntesis la primera vez.
 ## La idea
 
 - **Todo lo que importa vive en archivos que puedes leer.** No hay base de
-  datos, ni servicio, ni memoria oculta: un plan, una bitácora, fichas de
-  lecciones, páginas de una wiki. Viajan con el proyecto y con su control de
-  versiones.
-- **El agente los mantiene; tú decides qué entra.** Las lecciones y las
-  páginas de la wiki primero se proponen, y se escriben solo con tu OK.
+  datos, ni servicio, ni memoria oculta: un plan, una bitácora, lecciones,
+  páginas de una wiki. Viajan con el proyecto y con su control de versiones.
+  La única excepción es la graduación: con tu OK, una lección transversal
+  confirmada pasa a ser una regla de tus instrucciones globales, fuera del
+  proyecto; la lección y su historia quedan en el proyecto.
+- **El agente los mantiene; las lecciones y las páginas de la wiki entran
+  solo con tu OK.** Primero se proponen, y se archivan solo con tu OK; una
+  lección redactada en tu ausencia espera en disco como `propuesta`, fuera
+  del índice.
 - **Las instrucciones se pagan en cada sesión.** Las reglas que el agente
-  debe ver siempre caben en bloques cortos (20, 15 y 15 líneas como máximo),
+  debe ver siempre caben en bloques cortos (20, 15 y 15 líneas por defecto;
+  el verificador avisa si uno pasa su tope),
   y todo lo demás se lee cuando hace falta. Cuatro scripts chicos miden
   tamaños y controlan índices, para que los archivos no crezcan sin que nadie
   lo note.
@@ -55,16 +60,18 @@ cuando sus parámetros de dominio están claros.
 
 Cada instalador:
 
-1. lee el proyecto y explica en pocas líneas qué crearía;
-2. hace las preguntas que necesita, cada una con un valor por defecto;
-3. espera tu OK, y recién entonces escribe los archivos, con el estado real
-   del proyecto en lugar de plantillas vacías;
+1. explica en pocas líneas qué crearía y espera tu OK;
+2. lee el proyecto y resuelve contigo sus preguntas, proponiendo valores
+   por defecto o borradores;
+3. escribe los archivos, con el estado real del proyecto en lugar de
+   plantillas vacías;
 4. corre su verificador y cierra con un informe corto: qué creó, qué adaptó
    y por qué, y los dos o tres gestos que vas a usar.
 
-En Claude Code, escribir los rituales en `.claude/skills/` pide tu permiso.
-Si no lo das, van a `rituales/` y el bloque de reglas los señala ahí; puedes
-moverlos después.
+En Claude Code, `.claude/` es una ruta protegida: según el modo de permisos,
+escribir los rituales en `.claude/skills/` pide tu permiso, pasa por el
+clasificador del modo automático o se rechaza. Si no se escriben ahí, van a
+`rituales/` y el bloque de reglas los señala ahí; puedes moverlos después.
 
 Quitar el plugin no borra nada de tus proyectos: los archivos son tuyos y
 siguen funcionando como documentos comunes.
@@ -80,8 +87,9 @@ cerrar.
 Tiene cuatro capas:
 
 1. **Documentos vivos** en la raíz del proyecto.
-   - `PLAN.md`: la hoja de ruta, con una sección «quedamos en» arriba y
-     estados de tarea (✅ hecho, 🔄 en curso, ⏳ pendiente, 💡 idea).
+   - `PLAN.md`: la hoja de ruta, con estados de tarea (✅ hecho, 🔄 en curso,
+     ⏳ pendiente, 💡 idea aprobada); cada tarea en curso lleva su «quedamos
+     en» y un próximo paso.
    - `BITACORA.md` (`LOGBOOK.md`): entradas fechadas con las decisiones y
      sus razones. Solo se agrega: una marcha atrás es una entrada nueva,
      nunca una edición.
@@ -91,20 +99,23 @@ Tiene cuatro capas:
    (`CLAUDE.md`, `AGENTS.md` o equivalente), de 20 líneas como máximo, que
    le indica leer esos documentos antes de cambiar algo, y frenar y avisarte
    si un cambio contradice un invariante o una decisión registrada.
-3. **Control de versiones**, si el proyecto lo tiene. El instalador ofrece
-   iniciarlo y revisa qué no debe entrar en un commit.
+3. **Control de versiones.** Si el proyecto no lo tiene, el instalador
+   propone iniciarlo (sin él, copias fechadas); las exclusiones se revisan
+   antes del primer commit, y no se agrega ningún remoto salvo que lo pidas.
 4. **Un ritual de cierre**, que se invoca con «guarda el avance» o se corre
    después de un hito: actualiza los tres documentos dentro de sus topes,
    corre el verificador y hace el commit.
 
 **Topes.** Cada documento tiene un tope en líneas y en kilobytes, con una
 alarma al 80 %: PLAN 150 líneas y 18 KB, ARQUITECTURA 200 y 30 KB,
-BITACORA 200 y 25 KB, el archivo de instrucciones completo 300 líneas y
-20 KB. Viven en una línea al principio de `PLAN.md`, así que puedes
-recalibrarlos. El verificador (`scripts/lint_continuidad.py`, o
-`lint_continuity.py` en el juego inglés) compara cada documento y cada
-bloque con su tope; con `--margen` dice cuánto cabe todavía antes de
-escribir.
+BITACORA 200 y 25 KB. El archivo de instrucciones completo recibe un aviso
+desde 200 líneas o 12 KB y otro a las 300 líneas o 20 KB, nunca un fallo.
+Los topes viven en una línea legible por máquina dentro de `PLAN.md` (un
+comentario HTML que el verificador encuentra en cualquier parte del
+archivo), así que puedes recalibrarlos. El verificador
+(`scripts/lint_continuidad.py`, o `lint_continuity.py` en el juego inglés)
+compara cada documento y cada bloque con su tope; con `--margen` dice cuánto
+cabe todavía antes de escribir.
 
 **Rotación.** Cuando la bitácora se llena, `scripts/rotar_bitacora.py` mueve
 las entradas más viejas, textuales, a `BITACORA-archivo.md`, bajo una marca
@@ -117,10 +128,10 @@ registra por qué.
 
 ## Metacognición
 
-Un agente no aprende entre sesiones. La memoria automática lo ayuda a
-recordar hechos; la metacognición hace que cambie su forma de pensar. La
-unidad es una **lección de criterio**: una ficha en `criterio/` (`lessons/`)
-con
+Un agente no aprende entre sesiones. La memoria automática puede ayudarlo a
+recordar hechos y hasta tus correcciones; la metacognición hace que cambie
+su forma de pensar. La unidad es una **lección de criterio**: un archivo en
+`criterio/` (`lessons/`) con
 
 - un **Gatillo**: una situación que se reconoce antes de actuar («estoy por
   comparar períodos de una serie…»);
@@ -130,7 +141,7 @@ con
 - los **Casos**: líneas fechadas de origen, aplicación exitosa y
   reincidencia.
 
-Cada ficha declara su **validación** (`propuesta` sin tu OK, `hipotesis`
+Cada lección declara su **validación** (`propuesta` sin tu OK, `hipotesis`
 con un caso, `recurrente`, `confirmada` cuando ya se aplicó con éxito,
 `graduada`, `archivada`), su **evidencia** (`dato`, `fuente`, `realidad` o
 solo la palabra del `usuario`; una lección que descansa solo en tu palabra no
@@ -140,9 +151,10 @@ lado.
 
 **Captura.** Cuando corriges al agente y la corrección muestra un patrón, o
 los datos refutan una de sus predicciones, propone una lección en dos o tres
-líneas: gatillo, principio y en qué se apoya. Escribe la ficha solo con tu
-OK. El ritual de cierre suma un paso de retro: lecciones para proponer, o un
-«sin lecciones» explícito.
+líneas: gatillo, principio y en qué se apoya. Archiva la lección solo con tu
+OK; una lección redactada en tu ausencia espera en disco como `propuesta`,
+fuera del índice. El ritual de cierre suma un paso de retro: lecciones para
+proponer, o un «sin lecciones» explícito.
 
 **Aplicación.** Proponer lecciones es fácil; aplicarlas es donde se gana o se
 pierde, por cuatro canales:
@@ -161,7 +173,7 @@ pierde, por cuatro canales:
    (un script, un campo obligatorio, un paso del ritual), no más texto.
 
 Para ver en qué pueden terminar las lecciones graduadas, están las
-[reglas duras](principles-example.md) de un usuario.
+[reglas duras](principles-example.md) del propio autor.
 
 **La introspección** consolida las lecciones: cada semana o con la revisión
 periódica del proyecto, cuando la pides, y de inmediato después de un
@@ -178,16 +190,16 @@ tus decisiones ni te quitan las que son tuyas.
 
 Las fuentes se acumulan: artículos, informes, notas, fichas técnicas. El
 cerebro es una wiki de tu dominio que el agente escribe y mantiene, en
-`conocimiento/` (`knowledge/`), donde cada afirmación lleva un nivel de
-confianza:
+`conocimiento/` (`knowledge/`), donde cada afirmación importante lleva un
+nivel de confianza:
 
 - 🔸 **dixit**: alguien lo dice; no hay evidencia verificable;
-- 🔹 **consenso**: varias fuentes independientes coinciden, o está
-  documentado oficialmente;
+- 🔹 **consenso**: varias fuentes independientes coinciden, o es mecánica
+  documentada oficialmente (cómo funciona un sistema);
 - ✅ **validado**: contrastado con tus propios datos; el único nivel que
   sostiene una recomendación fuerte.
 
-Las páginas llevan además una **vigencia** (vigente, dudosa, obsoleta), con
+Las fichas llevan además una **vigencia** (vigente, dudosa, obsoleta), con
 la fecha de la fuente. A las fuentes oficiales o interesadas se les cree
 sobre cómo funcionan las cosas, no sobre lo que te conviene.
 
@@ -256,7 +268,11 @@ Algunos hábitos lo hacen funcionar mejor:
   mecánicos: un archivo de bitácora bloqueado, el «quedamos en» vuelto a
   mostrar al retomar y una guarda sobre las fuentes crudas de la wiki.
 - **Cuesta tokens.** En los ejemplos, unos 1.750 tokens por sesión por los
-  archivos instalados y unos 230 por el plugin (medido el 2026-09-28).
+  archivos instalados y unos 230 por las descripciones de las skills del
+  plugin en seis de ocho lecturas (en las otras dos, unos 1.115, sin causa
+  hallada), medido el 2026-09-28. Leer el plan y el documento de
+  arquitectura antes de un cambio suma unos 2.200 a 2.500 más en los
+  ejemplos, según una estimación.
 - **La evidencia todavía es escasa.** Las corridas de evaluación
   alientan y son chicas: ver [evals.md](../evals.md).
 - **Los scripts necesitan Python 3.8 o posterior.** Sin Python, los topes se
@@ -273,10 +289,11 @@ conserva cada entrada de la historia y muestra cada cambio para tu OK. El
 
 ## Preguntas
 
-**¿Reemplaza la memoria de mi agente?** No. La memoria automática recuerda
-hechos sobre ti; tino lleva el registro del proyecto, las lecciones que
-aprobaste y una wiki crítica, en archivos que son del proyecto, y no lee esa
-memoria.
+**¿Reemplaza la memoria de mi agente?** No. La memoria automática guarda
+notas que Claude escribe por su cuenta a partir de tus preferencias, tus
+correcciones y el contexto del proyecto, fuera del proyecto; tino lleva el
+registro del proyecto, las lecciones que aprobaste y una wiki crítica, en
+archivos que son del proyecto, y no lee esa memoria.
 
 **¿Funciona sin Claude Code?** Las skills siguen el formato Agent Skills y
 los archivos son Markdown común, así que los agentes que leen skills o un
