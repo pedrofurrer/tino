@@ -1,7 +1,7 @@
 ---
 name: continuity
 description: Sets up session continuity in a project (PLAN, LOGBOOK, ARCHITECTURE, rules and a closing ritual), adapted to it. Use with «set up continuity» or when a project will span several sessions.
-compatibility: The templates/ scripts (verifier and rotator) need Python 3.8+; without Python, the ritual measures and rotates by hand (PROTOCOL §Operating principles).
+compatibility: The templates/ scripts (verifier and rotator) need Python 3.8+; the copy in the Claude plugin directory ships no scripts. Without them or without Python, the ritual measures and rotates by hand (PROTOCOL §Operating principles).
 metadata:
   author: Pedro Furrer Mendizabal
   version: "2.0"
@@ -65,7 +65,8 @@ Explain to the user in ~10 lines, in their language:
   and invariants) + a rules block in the instructions + version control + a
   closing ritual, "save progress".
 - **What will be created**: those documents seeded with the project's real
-  history, the rules block, the ritual and two helper scripts.
+  history, the rules block, the ritual and, if this copy ships them, two
+  helper scripts.
 Wait for an explicit OK before going on.
 
 ### 2. Project diagnosis (BEFORE creating anything)
@@ -107,7 +108,8 @@ structure guide; in data, data dictionary and assumptions).
 - Insert `templates/instructions-block.md` into the PROJECT's agent
   instructions (create them if missing): translated, placeholders resolved
   (`<VERIFIER>` and `<ROTATOR>` are the FULL commands, e.g.
-  `python3 scripts/lint_continuity.py`), without the header comment, with
+  `python3 scripts/lint_continuity.py`, or "by hand" without the scripts),
+  without the header comment, with
   the document names of the token set and the HTML marker intact. At most 20
   lines from the heading to the marker: they are paid in every session. The
   user's global or personal instructions (if any) are not touched: they only
@@ -129,12 +131,15 @@ structure guide; in data, data dictionary and assumptions).
   moving it into `.claude/skills/<name>/SKILL.md` later is a plain move. On
   an upgrade, an installed ritual is rewritten where it is; if that write is
   denied, say so and leave it: never a second copy.
-- Install `templates/lint_continuity.py` and `templates/rotate_logbook.py`
-  as project scripts (e.g. `scripts/`; in the Spanish set,
-  `lint_continuidad.py` and `rotar_bitacora.py`) and run the verifier from
-  the root: it must be green. Without Python: the budgets stay the same and
-  the ritual notes that they are measured by hand (`wc -l`, `wc -c` or what
-  the editor shows) before writing.
+- If this copy of the skill ships `templates/lint_continuity.py` and
+  `templates/rotate_logbook.py`, install them as project scripts (e.g.
+  `scripts/`; in the Spanish set, `lint_continuidad.py` and
+  `rotar_bitacora.py`) and run the verifier from the root: it must be
+  green. The copy in the Claude plugin directory ships no scripts; there,
+  as without Python, the budgets stay the same and the ritual notes that
+  they are measured by hand (`wc -l`, `wc -c` or what the editor shows)
+  before writing. Scripts the project already has are left as they are:
+  an upgrade from a copy without scripts says so instead of replacing them.
 - Do not write permission rules or hooks into the project's settings. If
   the user works in Claude Code and wants mechanical guardrails (the logbook
   archive cannot be edited; "where we left off" re-shown on resume), point

@@ -2,6 +2,8 @@
 
 tino collects nothing and sends nothing. It is a set of text files and four
 small Python scripts that run on your machine, when your agent runs them.
+The copy in the Claude plugin directory is text files only, with no
+scripts.
 
 - **No network calls, no telemetry, no accounts.** The scripts use only the
   Python standard library and read files inside your project.

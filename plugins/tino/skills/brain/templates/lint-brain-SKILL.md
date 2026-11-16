@@ -27,7 +27,7 @@ from ~10 on; a green verifier does not mean a healthy wiki.
    - Run `<VERIFIER>` (front page ↔ disk, counters, END lines, caps per
      file, page ↔ entry bijection; warnings about the inbox, a large PENDING
      and invisible characters) and fix what it reports.
-   - By hand (the script does not see it): link orphans — pages without any
+   - By hand (no verifier checks it): link orphans — pages without any
      incoming [[link]] — and concepts repeatedly mentioned as a [[link]]
      without a page of their own.
    - Inbox: whatever has been in `sources/clips/` for a while without a

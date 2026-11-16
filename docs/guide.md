@@ -259,8 +259,9 @@ A few habits make it work better:
   estimated 2,200 to 2,500 in the examples.
 - **The evidence is still thin.** The eval runs are encouraging
   and small: see [evals.md](evals.md).
-- **The scripts need Python 3.8 or later.** Without Python the budgets are
-  measured by hand, and the rituals say so.
+- **The scripts need Python 3.8 or later.** Without Python, or with the
+  copy in the Claude plugin directory, which ships no scripts, the budgets
+  are measured by hand, and the rituals say so.
 
 ## Upgrading from 1.x
 
@@ -279,10 +280,13 @@ project's context, outside the project; tino keeps the project's record,
 the lessons you approved and a critical wiki, in files the project owns,
 and it does not read that memory.
 
-**Does it work without Claude Code?** The skills follow the Agent Skills
-format, and the files are plain Markdown, so agents that read skills or a
-project instructions file can use them. The plugin and the optional
-guardrails are specific to Claude Code.
+**Does it work without Claude Code?** Codex installs the plugin from the
+same catalog (see the [README](../README.md#codex)); there the rules block
+goes in `AGENTS.md` and the rituals in `.agents/skills/`, because Codex
+does not read `.claude/skills/`. The skills follow the Agent Skills format
+and the files are plain Markdown, so other agents that read skills or a
+project instructions file can use them too. The optional guardrails are
+specific to Claude Code.
 
 **Is anything sent anywhere?** No. See [PRIVACY.md](../PRIVACY.md).
 

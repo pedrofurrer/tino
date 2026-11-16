@@ -7,6 +7,15 @@ project from an earlier version (step 0). The block and the rituals are
 replaced once, by the current version's. The project's cards, concepts and
 syntheses are NEVER touched; the SCHEMA is only touched by showing the diff.
 
+## Plugin 2.0.2 — 2026-11-16 (wording only; the system stays at v2.0)
+- The installer installs the verifier only if this copy of the plugin ships
+  it; the copy in the Claude plugin directory ships no scripts, and
+  there the checks are "by hand", as without Python. The lint ritual says
+  that no verifier checks link orphans, instead of naming a script.
+- **Upgrade:** nothing to apply. Scripts the project already has are
+  left as they are; from a copy without scripts, the upgrade says so
+  instead of replacing them.
+
 ## Plugin 2.0.1 — 2026-10-10 (wording only; the system stays at v2.0)
 - Wording: the protocol (rule 10) and the ingest ritual agree that a single
   piece of unknown origin is read first in a subagent with no write or

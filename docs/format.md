@@ -104,6 +104,11 @@ Operations are case-insensitive.
 
 ## Scripts installed into your project
 
+The copy of tino in the Claude plugin directory ships no scripts: its
+installers set the checks to "by hand" and leave alone any scripts a
+project already has. The rest of this section applies to the copy
+installed from this repository.
+
 The Spanish set also keeps the 1.x file names. Upgrading a 1.x project
 therefore replaces each script's content under the same name, and the
 commands and hooks that point to it keep working.

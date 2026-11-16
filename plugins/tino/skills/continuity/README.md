@@ -39,11 +39,15 @@ and `brain`.
 
 **Claude Code:** add the marketplace and install the plugin:
 `claude plugin marketplace add pedrofurrer/tino`, then
-`claude plugin install tino@pfm`. **Claude apps and Cowork:** add tino from
-the plugin directory when it is listed there. **Agents that read Agent
-Skills** (Codex, Cursor, GitHub Copilot, Gemini CLI and others): copy this
-folder wherever that agent reads skills — several read `.claude/skills/` or
-`.agents/skills/` in the project; check their documentation. The system
+`claude plugin install tino@pfm`. **Codex:**
+`codex plugin marketplace add pedrofurrer/tino`, then
+`codex plugin add tino@pfm`; in Codex the rules block goes in `AGENTS.md`
+and the ritual in `.agents/skills/` (Codex does not read `.claude/skills/`).
+**Claude apps and Cowork:** add tino from the plugin directory when it is
+listed there. **Other agents that read Agent Skills** (Cursor, GitHub
+Copilot, Gemini CLI and others): copy this folder wherever that agent reads
+skills — several read `.claude/skills/` or `.agents/skills/` in the
+project; check their documentation. The system
 needs a project folder that persists between conversations: in a one-off
 chat, whatever is written does not survive.
 

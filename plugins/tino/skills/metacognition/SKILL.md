@@ -1,7 +1,7 @@
 ---
 name: metacognition
 description: Sets up metacognition: judgment lessons (trigger → principle) the agent proposes, applies and measures, with introspection. Use with «set up metacognition» or to learn from corrections.
-compatibility: The verifier templates/lint_lessons.py needs Python 3.8+; without Python, the introspection reviews by hand.
+compatibility: The verifier templates/lint_lessons.py needs Python 3.8+; the copy in the Claude plugin directory ships no scripts. Without it or without Python, the introspection reviews by hand.
 metadata:
   author: Pedro Furrer Mendizabal
   version: "2.0"
@@ -62,7 +62,7 @@ Explain to the user in ~10 lines, in their language:
   recurrence (recurrences over uses) and prunes.
 - **What will be created**: a lessons folder + an example, a rules block
   (≤15 lines) with the index below it in the project's instructions, the
-  verifier and the introspection ritual.
+  introspection ritual and, if this copy ships it, the verifier.
 Wait for an explicit OK before going on.
 
 ### 2. Configuration (3 questions, with these defaults)
@@ -105,16 +105,20 @@ other language → the English set)? Summarize it to the user in 3 lines.
   inside if needed: the example is marked as an example and the template
   stays outside the `lesson-*.md` pattern, so the verifier does not take it
   for a lesson.
-- Install `templates/lint_lessons.py` as a project script (e.g.
-  `scripts/lint_lessons.py`; `scripts/lint_criterio.py` in the Spanish set)
-  and run it on the final state (e.g. `python3 scripts/lint_lessons.py --dir
-  lessons --index CLAUDE.md`): it must be green. Without Python: the
-  introspection reviews by hand and the block says so.
+- If this copy ships `templates/lint_lessons.py`, install it as a project
+  script (e.g. `scripts/lint_lessons.py`; `scripts/lint_criterio.py` in the
+  Spanish set) and run it on the final state (e.g. `python3
+  scripts/lint_lessons.py --dir lessons --index CLAUDE.md`): it must be
+  green. Without it (the copy in the Claude plugin directory ships no
+  scripts) or without Python: the introspection reviews by hand and the
+  block says so. A verifier the project already has is left as it is: an
+  upgrade from a copy without scripts says so instead of replacing it.
 - Install `templates/introspect-SKILL.md` as a project skill in
   `.claude/skills/<name>/SKILL.md`, where `<name>` is `introspect`
   (`introspeccion` in the Spanish set) and equals the frontmatter `name`
   (other agents with skills read `.claude/skills/` or `.agents/skills/`),
-  with `<LINT_LESSONS>` resolved to the verifier's command and without the
+  with `<LINT_LESSONS>` resolved to the verifier's command (or "by hand")
+  and without the
   header comment. In Claude Code, `.claude/` is a protected path: depending
   on the permission mode, a write there asks the user, goes to auto mode's
   classifier or is refused; say so just before. If the environment has no

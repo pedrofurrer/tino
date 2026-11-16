@@ -275,8 +275,9 @@ Algunos hábitos lo hacen funcionar mejor:
   ejemplos, según una estimación.
 - **La evidencia todavía es escasa.** Las corridas de evaluación
   alientan y son chicas: ver [evals.md](../evals.md).
-- **Los scripts necesitan Python 3.8 o posterior.** Sin Python, los topes se
-  miden a mano, y los rituales lo dicen.
+- **Los scripts necesitan Python 3.8 o posterior.** Sin Python, o con la
+  copia del directorio de plugins de Claude, que no trae scripts, los topes
+  se miden a mano, y los rituales lo dicen.
 
 ## Actualizar desde 1.x
 
@@ -295,10 +296,13 @@ correcciones y el contexto del proyecto, fuera del proyecto; tino lleva el
 registro del proyecto, las lecciones que aprobaste y una wiki crítica, en
 archivos que son del proyecto, y no lee esa memoria.
 
-**¿Funciona sin Claude Code?** Las skills siguen el formato Agent Skills y
-los archivos son Markdown común, así que los agentes que leen skills o un
-archivo de instrucciones del proyecto pueden usarlos. El plugin y los
-controles opcionales son propios de Claude Code.
+**¿Funciona sin Claude Code?** Codex instala el plugin desde el mismo
+catálogo (ver el [README](../../README.es.md#codex)); ahí el bloque de
+reglas va en `AGENTS.md` y los rituales en `.agents/skills/`, porque Codex
+no lee `.claude/skills/`. Las skills siguen el formato Agent Skills y los
+archivos son Markdown común, así que otros agentes que leen skills o un
+archivo de instrucciones del proyecto también pueden usarlos. Los controles
+opcionales son propios de Claude Code.
 
 **¿Se envía algo a algún lado?** No. Ver [PRIVACY.md](../../PRIVACY.md).
 

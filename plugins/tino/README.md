@@ -32,7 +32,9 @@ writing anything. It writes Markdown files into your project (documents, a
 rules block in your agent's instructions file, project skills for the
 rituals, or plain files in `rituals/` if the write into `.claude/` does
 not happen) and copies up to four small Python 3 scripts (standard library
-only) that read your project's files and report. Nothing is sent anywhere:
+only) that read your project's files and report; the copy in the Claude
+plugin directory ships no scripts, and those checks are done by hand.
+Nothing is sent anywhere:
 tino makes no network calls and collects no data. It never reads your
 agent's memory or past conversations, and it does not change your agent's
 permission settings.

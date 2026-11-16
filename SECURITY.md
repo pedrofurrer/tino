@@ -10,7 +10,8 @@ ship as a new release, crediting the reporter if they wish.
 ## Scope
 
 tino is plain text plus four small Python scripts (standard library only)
-that read files in your project and print a report. It makes no network calls
+that read files in your project and print a report (the copy in the Claude
+plugin directory is plain text only). It makes no network calls
 and runs nothing on its own: your agent runs the scripts when a ritual says
 so, with the permissions you give it. Only one script writes, and only when
 asked to: `rotate_logbook.py --apply` moves old logbook entries into the

@@ -5,7 +5,8 @@ this comment. Placeholders: <RITUAL> = how the closing ritual is invoked
 it, «follow rituals/save-progress.md»); <VERSION> = this skill's
 version (CHANGELOG.md); <VERIFIER> and <ROTATOR> = the FULL commands of the
 installed scripts (e.g. `python3 scripts/lint_continuity.py` and `python3
-scripts/rotate_logbook.py`; without Python: "by hand"). Minimal scale (PLAN
+scripts/rotate_logbook.py`; without the scripts or without Python: "by
+hand"). Minimal scale (PLAN
 only): item 1 becomes «read PLAN.md» and item 3 is dropped. Document names,
 the INVARIANTS heading and the HTML marker on the last line come from the
 token set (Spanish set: BITACORA.md, ARQUITECTURA.md, INVARIANTES) and are

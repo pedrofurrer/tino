@@ -41,6 +41,15 @@ account (add `--no-publish` to keep it local):
 claude plugin eval ./plugins/tino --scaffold --allow-tools Bash Write Edit
 ```
 
+## The `directory` branch
+
+The Claude plugin directory reads `plugins/tino` from the `directory`
+branch, which is `main` without the scripts: the directory only accepts
+Markdown, text, JSON, YAML and images from publishers that are not a
+verified organization. Each release rebuilds it from `main` by removing
+`plugins/tino/evals/` and `plugins/tino/skills/*/templates/*.py`; never
+commit to it directly. The skills work with or without those files.
+
 ## License of contributions
 
 By contributing you agree that your contribution is licensed like the rest

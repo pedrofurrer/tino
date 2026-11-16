@@ -7,6 +7,14 @@ project from an earlier version (step 0). The block text and the
 introspection ritual are replaced once, by the current version's. The
 project's lessons are NEVER rewritten.
 
+## Plugin 2.0.2 — 2026-11-16 (wording only; the system stays at v2.0)
+- The installer installs the verifier only if this copy of the plugin ships
+  it; the copy in the Claude plugin directory ships no scripts, and
+  there the checks are "by hand", as without Python.
+- **Upgrade:** nothing to apply. Scripts the project already has are
+  left as they are; from a copy without scripts, the upgrade says so
+  instead of replacing them.
+
 ## Plugin 2.0.1 — 2026-10-10 (wording only; the system stays at v2.0)
 - Wording: a lesson is called a lesson, not a card, in the protocol, the
   introspection ritual, the lesson template and the block's capture line

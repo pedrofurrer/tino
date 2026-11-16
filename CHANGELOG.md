@@ -6,8 +6,22 @@ changelog, with the upgrade steps its installer applies:
 [metacognition](plugins/tino/skills/metacognition/CHANGELOG.md) and
 [brain](plugins/tino/skills/brain/CHANGELOG.md).
 
-## Unreleased
+## 2.0.2 — 2026-11-16
 
+Wording and packaging; no change to the files' formats or to what the
+scripts check.
+
+- The installers install the verifiers only when the copy of the plugin
+  ships them. The copy in the Claude plugin directory (the `directory`
+  branch: `main` without the scripts and the eval suite) ships none, and
+  its checks are done by hand, as without Python; scripts a project already
+  has are left as they are. The READMEs, the guide, `docs/format.md`,
+  `PRIVACY.md` and `SECURITY.md` say so.
+- The READMEs, the guide and each skill's README say how to install tino in
+  Codex (`codex plugin marketplace add pedrofurrer/tino`, then
+  `codex plugin add tino@pfm`) and that there the rules block goes in
+  `AGENTS.md` and the rituals in `.agents/skills/`: Codex does not read
+  `.claude/skills/`.
 - The READMEs and `docs/evals.md` link the technical report and the
   evaluation report on Zenodo, and the READMEs the essay that introduces
   tino.

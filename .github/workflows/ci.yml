@@ -6,6 +6,7 @@ permissions:
   contents: read
 jobs:
   bench:
+    if: github.ref != 'refs/heads/directory'
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false

@@ -6,8 +6,8 @@ abstract: "Session continuity, lessons learned from your corrections and a criti
 authors:
   - family-names: "Furrer Mendizabal"
     given-names: "Pedro"
-version: "2.0.1"
-date-released: "2026-10-10"
+version: "2.0.2"
+date-released: "2026-11-16"
 doi: "10.5281/zenodo.23028616"
 identifiers:
   - type: doi

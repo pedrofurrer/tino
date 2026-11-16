@@ -41,6 +41,23 @@ claude plugin install tino@pfm
 O dentro de una sesión: `/plugin marketplace add pedrofurrer/tino` y luego
 `/plugin install tino@pfm`.
 
+### Codex
+
+En una terminal, con Codex:
+
+```bash
+codex plugin marketplace add pedrofurrer/tino
+```
+
+```bash
+codex plugin add tino@pfm
+```
+
+Después abre una sesión nueva. En Codex el bloque de reglas va en
+`AGENTS.md` y los rituales en `.agents/skills/`, porque Codex no lee
+`.claude/skills/`: cuando un instalador detalle lo que va a crear, revisa
+esos dos lugares.
+
 ## Uso
 
 Pídelo con palabras simples, en cualquier idioma:
@@ -118,7 +135,8 @@ versión en español.
   entre el mismo proyecto con y sin tino, en Claude Code 2.1.283.
 - **Archivos:** Markdown en tu proyecto y hasta cuatro scripts chicos de
   Python (solo biblioteca estándar) que controlan tamaños, índices y
-  lecciones. tino no hace llamadas de red, no recolecta datos, nunca lee la
+  lecciones; la copia del directorio de plugins de Claude no trae scripts,
+  y esos controles se hacen a mano. tino no hace llamadas de red, no recolecta datos, nunca lee la
   memoria de tu agente ni conversaciones pasadas, y no cambia sus permisos:
   ver [PRIVACY.md](PRIVACY.md).
 - **Rituales:** Claude Code trata `.claude/` como una ruta protegida; según
@@ -133,7 +151,9 @@ Todo lo que tino escribe está en el idioma de tu proyecto. Los nombres de
 archivos y encabezados salen de uno de dos juegos de tokens, inglés o
 español, y los scripts aceptan los dos ([docs/format.md](docs/format.md)).
 Las skills siguen el formato abierto Agent Skills, así que otros agentes
-que leen skills pueden usarlas; consulta su documentación.
+que leen skills pueden usarlas. Codex instala el plugin ([arriba](#codex))
+y busca las skills de un proyecto en `.agents/skills/`; para otros
+agentes, consulta en su documentación dónde las leen.
 
 ## Más
 
